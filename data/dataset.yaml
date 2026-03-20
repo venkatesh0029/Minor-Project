@@ -1,0 +1,53 @@
+# dataset.yaml — YOLOv8 Dataset Configuration
+# AI Shelf Inventory Monitoring System
+#
+# Place this file at: models/dataset/dataset.yaml
+# Edit 'path' to point to your actual dataset folder.
+
+path: ./dataset          # Root path (relative to train_yolo.py)
+train: train/images      # Training images (relative to path)
+val:   val/images        # Validation images
+test:  test/images       # Test images (optional)
+
+# Number of classes
+nc: 12
+
+# Class names — must match your annotation labels exactly
+names:
+  0: coca_cola_500ml
+  1: pepsi_500ml
+  2: lays_classic
+  3: britannia_biscuits
+  4: amul_butter_500g
+  5: parle_g
+  6: maggi_noodles
+  7: horlicks_500g
+  8: dettol_soap
+  9: colgate_200g
+  10: surf_excel_1kg
+  11: lifebuoy_soap
+
+# ── Notes ──────────────────────────────────────────────────────────────────────
+#
+# Recommended image count per class: 100-500
+# Recommended total dataset size: 1200-6000 images
+#
+# Folder structure required:
+#   dataset/
+#   ├── train/
+#   │   ├── images/   ← .jpg or .png files
+#   │   └── labels/   ← .txt files (YOLO format)
+#   ├── val/
+#   │   ├── images/
+#   │   └── labels/
+#   └── test/
+#       ├── images/
+#       └── labels/
+#
+# YOLO label format (one line per object):
+#   class_id cx cy width height
+#   All values normalized 0-1 relative to image dimensions
+#
+# Example label file (image_001.txt):
+#   0 0.512 0.423 0.124 0.285   ← Coca Cola at center 51%, 42%
+#   3 0.234 0.651 0.098 0.211   ← Britannia Biscuits

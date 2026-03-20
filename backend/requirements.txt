@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+websockets
+pydantic
+
+# Optional: uncomment to enable YOLOv8+OpenCV detection (adds ~2GB and requires compatible CUDA drivers if using GPU)
+# ultralytics
+# opencv-python
